@@ -1,0 +1,78 @@
+{
+  "data_summary": {
+    "total_records": 80,
+    "unique_products": 4,
+    "date_range": {
+      "start": "2024-01-01 09:15:00",
+      "end": "2024-01-08 22:00:00"
+    },
+    "text_stats": {
+      "avg_length": 74.975,
+      "avg_word_count": 12.025,
+      "min_length": "55",
+      "max_length": "146"
+    },
+    "products": {
+      "Smartphone X": 21,
+      "Laptop Pro": 20,
+      "Wireless Headphones": 20,
+      "Tablet Air": 19
+    }
+  },
+  "sentiment_summary": {
+    "textblob": {
+      "textblob_polarity": {
+        "mean": 0.35815352182539684,
+        "std": 0.4325123601876152,
+        "min": -0.6666666666666666,
+        "max": 1.0,
+        "median": 0.4333333333333333
+      },
+      "textblob_subjectivity": {
+        "mean": 0.6512765376984128,
+        "std": 0.1977624681486898,
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.6716666666666666
+      }
+    },
+    "vader": {
+      "vader_compound": {
+        "mean": 0.35985749999999994,
+        "std": 0.6153084009644825,
+        "min": -0.8478,
+        "max": 0.938,
+        "median": 0.6908
+      },
+      "vader_positive": {
+        "mean": 0.3169625,
+        "std": 0.2120582940960733,
+        "min": 0.0,
+        "max": 0.707,
+        "median": 0.341
+      },
+      "vader_negative": {
+        "mean": 0.0972625,
+        "std": 0.15756780688269664,
+        "min": 0.0,
+        "max": 0.542,
+        "median": 0.0
+      },
+      "vader_neutral": {
+        "mean": 0.5857875,
+        "std": 0.13260416910699663,
+        "min": 0.293,
+        "max": 1.0,
+        "median": 0.5914999999999999
+      }
+    }
+  },
+  "visualization_paths": {
+    "distribution": "sentiment_distribution_vader.png",
+    "product": "sentiment_by_product_vader.png",
+    "timeline": "sentiment_timeline_vader.png",
+    "dashboard": "interactive_dashboard_vader.html",
+    "wordcloud_positive": "wordcloud_positive.png",
+    "wordcloud_negative": "wordcloud_negative.png"
+  }
+}

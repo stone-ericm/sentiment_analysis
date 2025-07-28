@@ -1,0 +1,70 @@
+================================================================================
+SENTIMENT ANALYSIS REPORT
+================================================================================
+
+Generated on: 2025-07-25 22:57:03
+Data source: data/test_data.csv
+
+DATA SUMMARY
+----------------------------------------
+Total records: 80
+Unique products: 4
+Date range: 2024-01-01 09:15:00 to 2024-01-08 22:00:00
+Average text length: 75.0 characters
+Average word count: 12.0 words
+
+SENTIMENT ANALYSIS SUMMARY
+----------------------------------------
+
+TEXTBLOB Analysis:
+  textblob_polarity:
+    Mean: 0.358
+    Std: 0.433
+    Min: -0.667
+    Max: 1.000
+    Median: 0.433
+  textblob_subjectivity:
+    Mean: 0.651
+    Std: 0.198
+    Min: 0.000
+    Max: 1.000
+    Median: 0.672
+
+VADER Analysis:
+  vader_compound:
+    Mean: 0.360
+    Std: 0.615
+    Min: -0.848
+    Max: 0.938
+    Median: 0.691
+  vader_positive:
+    Mean: 0.317
+    Std: 0.212
+    Min: 0.000
+    Max: 0.707
+    Median: 0.341
+  vader_negative:
+    Mean: 0.097
+    Std: 0.158
+    Min: 0.000
+    Max: 0.542
+    Median: 0.000
+  vader_neutral:
+    Mean: 0.586
+    Std: 0.133
+    Min: 0.293
+    Max: 1.000
+    Median: 0.591
+
+GENERATED VISUALIZATIONS
+----------------------------------------
+distribution: sentiment_distribution_vader.png
+product: sentiment_by_product_vader.png
+timeline: sentiment_timeline_vader.png
+dashboard: interactive_dashboard_vader.html
+wordcloud_positive: wordcloud_positive.png
+wordcloud_negative: wordcloud_negative.png
+
+================================================================================
+END OF REPORT
+================================================================================
