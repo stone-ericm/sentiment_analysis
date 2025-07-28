@@ -28,22 +28,76 @@ semantic_analysis/
 └── README.md              # This file
 ```
 
-## Setup
+## Quick Setup (New Device)
 
-1. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 1. Clone the Repository
 
-2. **Download NLTK data** (run once):
-   ```python
-   python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('vader_lexicon')"
-   ```
+```bash
+git clone https://github.com/stone-ericm/sentiment_analysis.git
+cd sentiment_analysis
+```
 
-3. **Download spaCy model** (optional, for advanced text processing):
-   ```bash
-   python -m spacy download en_core_web_sm
-   ```
+### 2. Set Up Python Environment
+
+**Option A: Using Virtual Environment (Recommended)**
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+**Option B: Using Conda**
+```bash
+# Create conda environment
+conda create -n sentiment_analysis python=3.9
+conda activate sentiment_analysis
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 3. Download Required Data
+
+```bash
+# Download NLTK data (run once)
+python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('vader_lexicon')"
+
+# Download spaCy model (optional, for advanced text processing)
+python -m spacy download en_core_web_sm
+```
+
+### 4. Prepare Your Data
+
+Create a CSV file in the `data/` directory with your data:
+
+```csv
+datetime,product,quote
+2024-01-15 10:30:00,Product A,"This product is amazing and works perfectly!"
+2024-01-15 11:45:00,Product B,"I'm not satisfied with the quality."
+```
+
+Required columns:
+- `datetime`: Date and time (format: YYYY-MM-DD HH:MM:SS)
+- `product`: Product name or identifier
+- `quote`: English language text to analyze
+
+### 5. Run the Analysis
+
+```bash
+# Run with sample data
+python src/main.py
+
+# Run with your own data
+python src/main.py --input data/your_data.csv
+```
 
 ## Usage
 
@@ -56,19 +110,34 @@ from src.main import run_sentiment_analysis
 results = run_sentiment_analysis('data/your_data.csv')
 ```
 
-### Data Format
+### Command Line Options
 
-Your CSV file should have the following columns:
-- `datetime`: Date and time of the quote (format: YYYY-MM-DD HH:MM:SS)
-- `product`: Product name or identifier
-- `quote`: English language text to analyze
+```bash
+# Run with default settings
+python src/main.py
 
-Example:
-```csv
-datetime,product,quote
-2024-01-15 10:30:00,Product A,"This product is amazing and works perfectly!"
-2024-01-15 11:45:00,Product B,"I'm not satisfied with the quality."
+# Specify input file
+python src/main.py --input data/my_data.csv
+
+# Specify output directory
+python src/main.py --output results/my_analysis/
+
+# Run with specific sentiment method
+python src/main.py --method vader
 ```
+
+### Jupyter Notebooks
+
+For interactive exploration:
+```bash
+# Start Jupyter
+jupyter lab
+
+# Or for classic Jupyter
+jupyter notebook
+```
+
+Then open `notebooks/sentiment_analysis_exploration.ipynb`
 
 ## Sentiment Analysis Methods
 
@@ -85,10 +154,54 @@ The analysis generates:
 - Interactive visualizations
 - Detailed reports in the `results/` directory
 
+## Troubleshooting
+
+### Common Issues
+
+**1. Import Errors**
+```bash
+# Make sure you're in the virtual environment
+source venv/bin/activate  # macOS/Linux
+# or
+venv\Scripts\activate     # Windows
+```
+
+**2. NLTK Data Not Found**
+```bash
+python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('vader_lexicon')"
+```
+
+**3. Memory Issues with Large Datasets**
+- Use smaller chunks of data
+- Try different sentiment methods (VADER is faster than Transformers)
+
+**4. Missing Dependencies**
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### System Requirements
+
+- Python 3.8 or higher
+- 4GB RAM minimum (8GB recommended for large datasets)
+- Internet connection for downloading models (first run only)
+
 ## Customization
 
 You can customize the analysis by:
 - Modifying preprocessing steps in `data_processor.py`
 - Adding new sentiment analysis methods in `sentiment_analyzer.py`
 - Creating custom visualizations in `visualizer.py`
-- Adjusting parameters in `main.py` 
+- Adjusting parameters in `main.py`
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is open source and available under the MIT License. 
