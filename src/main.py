@@ -13,7 +13,7 @@ from typing import Dict, Optional, Tuple
 
 # Import project modules
 from data_processor import DataProcessor, load_and_preprocess
-from sentiment_analyzer import SentimentAnalyzer, run_sentiment_analysis
+from sentiment_analyzer import SentimentAnalyzer
 from visualizer import SentimentVisualizer
 
 # Set up logging
