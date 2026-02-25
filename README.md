@@ -46,9 +46,9 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk
 Run the analysis:
 
 ```bash
-python src/main.py                          # uses sample data
-python src/main.py --input data/your.csv    # your own dataset
-python src/main.py --method vader           # single method
+python src/main.py data/sample_data.csv
+python src/main.py data/sample_data.csv --methods vader textblob
+python src/main.py data/sample_data.csv --methods vader --viz-method vader
 ```
 
 Input CSV format:
