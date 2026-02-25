@@ -45,10 +45,10 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk
 ### 5. Run Analysis
 ```bash
 # Run with sample data
-python src/main.py
+python src/main.py data/sample_data.csv
 
 # Run with your own data
-python src/main.py --input data/your_data.csv
+python src/main.py data/your_data.csv
 ```
 
 ## 📊 Data Format
